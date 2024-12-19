@@ -17,7 +17,9 @@ const CardWrapper: FC<Props> = ({
   titleClasses,
 }) => {
   return (
-    <div className={`shadow-section rounded-[20px] p-6 ${classes}`}>
+    <div
+      className={`shadow-section overflow-hidden rounded-[20px] p-6 ${classes}`}
+    >
       <div className="flex items-center gap-2">
         <Image src={image} alt={title} height={12} width={12} />
         <p

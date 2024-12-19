@@ -97,7 +97,7 @@ export default function Home() {
               <CardWrapper
                 image={Chats}
                 title={'FORECASTS'}
-                classes="w-full md:w-3/12 bg-forecasts bg-no-repeat bg-cover"
+                classes="w-full md:w-3/12 bg-forecasts bg-no-repeat bg-center bg-cover"
                 titleClasses="!text-primary-light"
               >
                 <div className="my-6">
