@@ -180,7 +180,7 @@ const OrderTable: FC = () => {
 
   return (
     <div className="mt-6 md:mt-12">
-      <div className="rounded-md border">
+      <div className="rounded-lg border border-border overflow-hidden">
         <Table>
           <TableHeader className="bg-table-header">
             {table
