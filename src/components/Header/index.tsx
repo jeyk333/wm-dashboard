@@ -14,7 +14,7 @@ const Header: FC = () => {
             <button
               key={menu.id}
               onClick={() => setSelected(menu.id)}
-              className={`flex items-center justify-center p-3 text-base md:text-lg gap-3 rounded-full ${selected === menu.id ? 'bg-primary-light' : ''}`}
+              className={`flex items-center justify-center p-3 font-medium text-base md:text-lg gap-3 rounded-full ${selected === menu.id ? 'bg-primary-light' : ''}`}
             >
               <Icon color={selected === menu.id ? '#212636' : '#8a94a6'} />
               <span
