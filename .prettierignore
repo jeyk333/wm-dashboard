@@ -1,0 +1,10 @@
+# Ignore artifacts:
+build
+.next
+out
+
+# Ignore dependency folders:
+node_modules
+
+# Ignore specific files:
+package-lock.json
