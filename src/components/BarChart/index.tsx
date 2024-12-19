@@ -44,8 +44,8 @@ const BarChart: FC = () => {
         borderColor: '#CCFBEF',
         borderWidth: 1,
         borderRadius: {
-          topLeft: 10,
-          topRight: 10,
+          topLeft: 6,
+          topRight: 6,
           bottomLeft: 0,
           bottomRight: 0,
         },
