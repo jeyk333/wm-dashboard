@@ -53,7 +53,7 @@ export default function Home() {
             {GLANCES.map((glance: GlancesType) => (
               <div
                 key={glance.id}
-                className="shadow-section rounded-[20px] p-6 w-full md:w-[31.5%]"
+                className="shadow-section rounded-[20px] p-6 w-full xl:w-[31.5%] 2xl:w-[31.75%]"
               >
                 <div className="flex items-center gap-2">
                   <Image
