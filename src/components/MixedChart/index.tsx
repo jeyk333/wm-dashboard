@@ -126,11 +126,17 @@ const MixedChart: FC = () => {
         ticks: {
           stepSize: 10,
           beginAtZero: true,
+          padding: 18.5,
         },
         title: {
           display: true,
           text: 'CONSULTATIONS',
           color: '#C4C4C4',
+          font: {
+            size: 8,
+            weight: 600,
+          },
+          padding: 0,
         },
         border: {
           dash: [8],
@@ -145,11 +151,17 @@ const MixedChart: FC = () => {
         ticks: {
           stepSize: 10,
           beginAtZero: true,
+          padding: 18.5,
         },
         title: {
           display: true,
           text: 'EXPERTS ONLINE',
           color: '#C4C4C4',
+          font: {
+            size: 8,
+            weight: 600,
+          },
+          padding: 0,
         },
         border: {
           dash: [8],

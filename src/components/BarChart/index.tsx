@@ -99,6 +99,7 @@ const BarChart: FC = () => {
         ticks: {
           stepSize: 10,
           beginAtZero: true,
+          padding: 18.5,
         },
         border: {
           dash: [8],
