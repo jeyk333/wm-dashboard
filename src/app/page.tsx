@@ -29,7 +29,7 @@ export default function Home() {
         <Header />
         <div className="mx-4 md:mx-10 rounded-[20px] shadow-section my-9 py-8 px-2 md:px-6">
           <div className="flex items-center justify-between">
-            <h4 className="font-medium text-[24px] md:text-[32px] text-text">
+            <h4 className="font-medium text-2xl md:text-[32px] text-text">
               At a glance
             </h4>
             <Select onValueChange={setTime} value={time}>
@@ -52,7 +52,7 @@ export default function Home() {
           </div>
           <div className="mt-16">
             {' '}
-            <h4 className="font-medium text-[24px] md:text-[32px] text-text">
+            <h4 className="font-medium text-2xl md:text-[32px] text-text">
               Insights
             </h4>
             <div className="mt-6 md:mt-12 flex flex-col md:flex-row gap-6">
@@ -63,7 +63,7 @@ export default function Home() {
           </div>
           <div className="mt-16">
             {' '}
-            <h4 className="font-medium text-[24px] md:text-[32px] text-text">
+            <h4 className="font-medium text-2xl md:text-[32px] text-text">
               Orders
             </h4>
             <OrderTable />

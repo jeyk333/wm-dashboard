@@ -121,11 +121,11 @@ const BarChart: FC = () => {
         </div>
         <div className="border-t border-border gap-4 md:gap-14 mt-4 pt-6 flex items-center flex-wrap">
           <div className="flex items-center gap-2">
-            <span className="bg-[#CCFBEF] h-1 w-4 rounded-full"></span>
+            <span className="bg-primary-light h-1 w-4 rounded-full"></span>
             <p className="text-text-dark text-xs">Consultations</p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="bg-[#134E48] h-1 w-4 rounded-full"></span>
+            <span className="bg-primary-dark h-1 w-4 rounded-full"></span>
             <p className="text-text-dark text-xs">Orders closed</p>
           </div>
         </div>
