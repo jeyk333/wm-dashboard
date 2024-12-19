@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Image from 'next/image';
 
 import {
   Select,
@@ -14,14 +13,11 @@ import Sidebar from '@/components/Sidebar';
 import Header from '@/components/Header';
 import { TIME_FILTER, TimeFilterType } from '@/constants/timeFilter';
 import { GLANCES, GlancesType } from '@/constants/glances';
-import Profit from '@/assets/images/increase.png';
-import Loss from '@/assets/images/decrease.png';
-import CardWrapper from '@/components/CardWrapper';
 import MixedChart from '@/components/MixedChart';
 import BarChart from '@/components/BarChart';
-import Chats from '@/assets/images/chat-card.png';
-import ArrowUp from '@/assets/images/arrow-up.png';
 import OrderTable from '@/components/OrderTable';
+import GlanceCard from '@/components/GlanceCard';
+import ForecastsCard from '@/components/ForecastsCard';
 
 export default function Home() {
   const [time, setTime] = useState<string>('7');
@@ -51,39 +47,7 @@ export default function Home() {
           </div>
           <div className="mt-6 md:mt-12 flex gap-x-8 gap-y-6 flex-wrap">
             {GLANCES.map((glance: GlancesType) => (
-              <div
-                key={glance.id}
-                className="shadow-section rounded-[20px] p-6 w-full xl:w-[31.5%] 2xl:w-[31.75%]"
-              >
-                <div className="flex items-center gap-2">
-                  <Image
-                    src={glance.icon}
-                    alt={glance.label}
-                    height={12}
-                    width={12}
-                  />
-                  <p className="text-xs text-text-dark font-semibold leading-[30px]">
-                    {glance.label}
-                  </p>
-                </div>
-                <p className="text-[32px] font-medium text-text my-2 leading-[38.4px]">
-                  {glance.value}
-                </p>
-                <div className="flex items-center gap-2">
-                  {glance.status === 'profit' ? (
-                    <Image src={Profit} alt="Profit" width={24} height={24} />
-                  ) : (
-                    <Image src={Loss} alt="Profit" width={24} height={24} />
-                  )}
-                  <p className="text-sm">
-                    <span
-                      className={`${glance.status === 'profit' ? 'text-success' : 'text-error'}`}
-                    >
-                      {glance.percentage}%
-                    </span>
-                  </p>
-                </div>
-              </div>
+              <GlanceCard glance={glance} key={glance.id} />
             ))}
           </div>
           <div className="mt-16">
@@ -94,49 +58,7 @@ export default function Home() {
             <div className="mt-6 md:mt-12 flex flex-col md:flex-row gap-6">
               <MixedChart />
               <BarChart />
-              <CardWrapper
-                image={Chats}
-                title={'FORECASTS'}
-                classes="w-full md:w-3/12 bg-forecasts bg-no-repeat bg-center bg-cover"
-                titleClasses="!text-primary-light"
-              >
-                <div className="my-6">
-                  <div className="flex justify-between flex-start">
-                    <p className="text-[56px] font-medium text-white leading-[67.5px]">
-                      +15%
-                    </p>
-                    <Image
-                      src={ArrowUp}
-                      alt="Profit"
-                      height={35}
-                      width={35}
-                      className="object-contain h-[35px]"
-                    />
-                  </div>
-                  <p className="text-sm text-white leading-[21.98px] mt-3">
-                    forecasted increase in your sales closed by the end of the
-                    current month
-                  </p>
-                </div>
-                <div>
-                  <div className="flex justify-between flex-start">
-                    <p className="text-[56px] font-medium text-white leading-[67.5px]">
-                      +20%
-                    </p>
-                    <Image
-                      src={ArrowUp}
-                      alt="Profit"
-                      height={35}
-                      width={35}
-                      className="object-contain h-[35px]"
-                    />
-                  </div>
-                  <p className="text-sm text-white leading-[21.98px] mt-3">
-                    forecasted increase in your sales closed by the end of the
-                    current month
-                  </p>
-                </div>
-              </CardWrapper>
+              <ForecastsCard />
             </div>
           </div>
           <div className="mt-16">
