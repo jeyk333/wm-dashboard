@@ -37,7 +37,7 @@ export default function Home() {
               At a glance
             </h4>
             <Select onValueChange={setTime} value={time}>
-              <SelectTrigger className="w-fit rounded-lg">
+              <SelectTrigger className="w-[97px] rounded-lg">
                 <SelectValue placeholder="Select time" />
               </SelectTrigger>
               <SelectContent>
