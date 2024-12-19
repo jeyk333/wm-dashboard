@@ -33,6 +33,30 @@ ChartJS.register(
 );
 
 const MixedChart: FC = () => {
+  //Custom plugin for Right Y-axis label
+  const customPlugin = {
+    id: 'customPlugin',
+    beforeDraw: (chart: ChartJS) => {
+      const ctx = chart.ctx;
+      const scale = chart.scales['y2'];
+
+      ctx.save();
+      ctx.font = `600 8px Inter`;
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'middle';
+      ctx.fillStyle = '#C4C4C4';
+
+      const x = scale.left + 60;
+      const y = scale.bottom - scale.height / 2;
+
+      ctx.save();
+      ctx.translate(x, y);
+      ctx.rotate(-Math.PI / 2);
+      ctx.fillText('EXPERTS ONLINE', 0, 0);
+      ctx.restore();
+    },
+  };
+
   const data: ChartData<keyof ChartTypeRegistry, unknown, unknown> = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
     datasets: [
@@ -156,7 +180,7 @@ const MixedChart: FC = () => {
         title: {
           display: true,
           text: 'EXPERTS ONLINE',
-          color: '#C4C4C4',
+          color: 'transparent',
           font: {
             size: 8,
             weight: 600,
@@ -179,7 +203,12 @@ const MixedChart: FC = () => {
     >
       <div className="mt-6">
         <div className="md:h-[240px] lg:h-[320px]">
-          <Chart type="bar" data={data} options={options} />
+          <Chart
+            type="bar"
+            data={data}
+            options={options}
+            plugins={[customPlugin]}
+          />
         </div>
         <div className="border-t border-border gap-4 md:gap-14 mt-4 pt-6 flex items-center flex-wrap">
           <div className="flex items-center gap-2">
