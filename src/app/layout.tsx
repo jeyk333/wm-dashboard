@@ -1,5 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+
+import Sidebar from '@/components/Sidebar';
+import Header from '@/components/Header';
 import './globals.css';
 
 const inter = Inter({
@@ -25,7 +28,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${inter.variable} antialiased`}>
-        {children}
+        <div className="flex h-screen">
+          <Sidebar />
+          <div className="flex-1 overflow-auto h-screen">
+            <Header />
+            <div className="mx-4 md:mx-10 rounded-[20px] shadow-section my-9 py-8 px-2 md:px-6">
+              {children}
+            </div>
+          </div>
+        </div>
       </body>
     </html>
   );
